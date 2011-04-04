@@ -14,7 +14,7 @@ class(V) -> popcount:hybrid(V).
 -define(EMPTYRRR, {<<>>, <<>>}).
 % Can make a function that builds this function, using ceil(log_2(blocksize)) storage for classes
 make_class_accumulator(Blocksize) ->
-    ClassSize = my_math:ceillog2(Blocksize),
+    ClassSize = my_math:ceillog2(Blocksize+1), % remove + 1 coz we don't need to store class 0?
     fun(Classes, V) -> << Classes/bits, (class(V)):ClassSize >> end.
 
 % Read claude's code - how does he know how many bits in an offset? how is the RRR Table generated and ordered?
