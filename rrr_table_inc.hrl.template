@@ -1,0 +1,3 @@
+-define(BLOCKS, { ${blocks} }).
+-define(CLASS_BASES, { ${class_bases} }).
+-define(REVERSE_OFFSETS, { ${rev_offsets} }).

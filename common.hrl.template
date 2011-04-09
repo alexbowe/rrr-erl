@@ -1,0 +1,4 @@
+-define(BLOCKSIZE, ${blocksize}).
+-define(CLASSBITS, ${classbits}).
+-define(CEILLOG2BINOMIAL_TABLE, { ${ceillog2binomial} }).
+-define(CEILLOG2BINOMIAL(K), erlang:element(K+1, ?CEILLOG2BINOMIAL_TABLE)).
