@@ -1,3 +1,9 @@
+def pop_table(bits):
+    table = [0]
+    for i in xrange(1, 1 << bits):
+        table.append((i & 1) + table[(i >> 1)])
+    return table
+
 def element_0(c):
     """Generates first permutation with a given amount of set bits, which is used to generate the rest."""
     return (1 << c) - 1
@@ -100,6 +106,7 @@ if __name__ == '__main__':
     data['blocks'] = table_string(blocks)
     data['rev_offsets'] = table_string(reverse_offsets)
     data['class_bases'] = table_string(class_bases)
+    data['pop_table_8'] = table_string(pop_table(8))
 
     for filename in glob('*.template'):
         with open(filename, 'r') as f:
